@@ -1,7 +1,8 @@
 // create table 1-20
 'use strict'
-const rows=prompt("Please enter the rows");
-const cols=prompt("Please enter the columns");
+let rows=prompt("Please enter the rows");
+let cols=prompt("Please enter the columns");
+debugger
 if(rows=="" || rows==null){
     rows=10;
 }
@@ -10,16 +11,17 @@ if(cols=="" || cols==null){
 }
 createTable(rows,cols);
 function createTable(r,c){
-    debugger
+    
 let i=1,j=1;
-let output="<table cellpadding='10' border='1'>";
+let output="<table>";
 for(i=1;i<=r;i++){
     output+=`<tr>`;
     while(j<=c){
-        output+=`<td>${i*j}</td>`;
+        output+=`<td class="${i%2!=0?'td-bg':''}">${i*j}</td>`;
         j++;
     }
     output+=`</tr>`;
+    debugger
     j=1;
 }
 output+='</table>';
